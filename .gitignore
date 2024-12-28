@@ -1,0 +1,15 @@
+# Ignore checkpoint files
+*.pth
+
+# Ignore dataset files
+Multiscale_Image_Dataset/
+*.tiff
+
+# Ignore text files
+*.txt
+
+# Ignore other typical files to exclude
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
