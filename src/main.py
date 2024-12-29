@@ -12,11 +12,11 @@ from train import train_deepfaker
 from models.baseline import CNN_DF, AE_DF
 ##################################################################################################################################################
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-dataset_dir = "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/dataset/raw"
-checkpoint_dir_CNN_DF = "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_CNN_DF"
-checkpoint_dir_AE_DF = "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_AE_DF"
+dataset_dir = "/work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/dataset/raw"
+checkpoint_dir_CNN_DF = "/work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_CNN_DF"
+checkpoint_dir_AE_DF = "/work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_AE_DF"
 batch_size = 32
-num_epochs = 15000
+num_epochs = 20000
 checkpoint_interval = 200
 ##################################################################################################################################################
 
@@ -112,7 +112,7 @@ def create_data_loader(root_dir, batch_size=32, mode="train"):
     
     bright_transform = transforms.Compose([
     transforms.Resize((128, 128)),
-    transforms.Lambda(lambda img: transforms.functional.adjust_brightness(img, 2)),
+    transforms.Lambda(lambda img: transforms.functional.adjust_brightness(img, 3)),
     transforms.ToTensor(),
     transforms.Normalize((0.5,), (0.5,))
     ])
@@ -138,6 +138,7 @@ cnn_model = CNN_DF()
 ae_model = AE_DF(input_dim=128 * 128)
 
 # 3. Train
+'''
 # 3.1 Autoencoder
 print("Training AE_DF model...")
 train_deepfaker(
@@ -163,4 +164,3 @@ train_deepfaker(
 )
 
 print("Training completed for both models.")
-'''
