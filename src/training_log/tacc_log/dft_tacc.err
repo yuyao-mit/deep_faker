@@ -1,9 +1,0 @@
-srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
-slurmstepd: error: *** JOB 6820895 ON c196-012 CANCELLED AT 2024-12-29T06:53:45 DUE TO TIME LIMIT ***
-slurmstepd: error: *** STEP 6820895.0 ON c196-012 CANCELLED AT 2024-12-29T06:53:45 DUE TO TIME LIMIT ***
-srun: got SIGCONT
-srun: forcing job termination
-srun: error: c196-012: task 3: Terminated
-srun: error: c196-012: task 0: Terminated
-srun: error: c196-012: task 1: Terminated
-srun: error: c196-012: task 2: Terminated
