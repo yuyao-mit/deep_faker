@@ -12,11 +12,11 @@ from train import train_deepfaker
 from models.baseline import CNN_DF, AE_DF
 ##################################################################################################################################################
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-dataset_dir = "/home/gridsan/yyao/Research_Projects/Microstructure_Enough/deep_faker/dataset/raw"
-checkpoint_dir_CNN_DF = "/home/gridsan/yyao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_CNN_DF"
-checkpoint_dir_AE_DF = "/home/gridsan/yyao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_AE_DF"
+dataset_dir = "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/dataset/raw"
+checkpoint_dir_CNN_DF = "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_CNN_DF"
+checkpoint_dir_AE_DF = "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_AE_DF"
 batch_size = 32
-num_epochs = 20000
+num_epochs = 15000
 checkpoint_interval = 200
 ##################################################################################################################################################
 
@@ -149,7 +149,7 @@ train_deepfaker(
     device=device,
     checkpoint_interval=checkpoint_interval,
 )
-
+'''
 # 3.2 CNN
 print("Training CNN_DF model...")
 train_deepfaker(
@@ -163,3 +163,4 @@ train_deepfaker(
 )
 
 print("Training completed for both models.")
+'''

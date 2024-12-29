@@ -1,13 +1,25 @@
 #!/bin/bash
-#SBATCH --job-name=deep_faker_train       # Job name
-#SBATCH --output=deep_faker_%j.log        # Standard output and error log
-#SBATCH --gres=gpu:volta:2                # Request 2 Volta GPUs
-#SBATCH --cpus-per-task=40                # Request 40 CPUs per task
-#SBATCH --time=300:00:00                  # Set maximum runtime
+#SBATCH -J dft_job            # Job name
+#SBATCH -o dft_job.out        # Standard output file
+#SBATCH -e dft_job.err        # Standard error file
+#SBATCH -N 1                  # Number of nodes
+#SBATCH --ntasks-per-node=4   # Number of tasks (GPUs) per node
+#SBATCH -p rtx-dev            # Partition (queue)
+#SBATCH -t 2:00:00            # Time limit
+#SBATCH --exclusive
 
 # Load necessary modules
-source /etc/profile
-module load anaconda/2024a
+module load python3/3.9.2     # Ensure the correct Python module is loaded
+
+# Activate the virtual environment
+source $SCRATCH/python-envs/test-env/bin/activate
+
+# Check GPU status
+nvidia-smi > gpu_status.log
+
+# Set the environment variable for PyTorch CUDA memory management
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # Run the Python script
-python main.py
+srun python3 ./main.py
+

@@ -1,0 +1,31 @@
+/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/nn/modules/linear.py:125: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/nn/modules/linear.py:125: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/nn/modules/linear.py:125: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/nn/modules/linear.py:125: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return F.linear(input, self.weight, self.bias)
+Traceback (most recent call last):
+  File "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/./main.py", line 143, in <module>
+    train_deepfaker(
+  File "/home1/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/train.py", line 52, in train_deepfaker
+    optimizer.step()
+  File "/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/optim/optimizer.py", line 487, in wrapper
+    out = func(*args, **kwargs)
+  File "/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/optim/optimizer.py", line 91, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/optim/adam.py", line 213, in step
+    has_complex = self._init_group(
+  File "/scratch1/10214/yu_yao/python-envs/test-env/lib/python3.9/site-packages/torch/optim/adam.py", line 153, in _init_group
+    state["exp_avg"] = torch.zeros_like(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 512.00 MiB. GPU 0 has a total capacity of 15.74 GiB of which 312.38 MiB is free. Process 9599 has 4.38 GiB memory in use. Including non-PyTorch memory, this process has 2.44 GiB memory in use. Process 9598 has 4.38 GiB memory in use. Process 9597 has 4.24 GiB memory in use. Of the allocated memory 2.21 GiB is allocated by PyTorch, and 25.23 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+srun: error: c196-011: task 0: Exited with exit code 1
+slurmstepd: error: *** JOB 6820639 ON c196-011 CANCELLED AT 2024-12-28T21:28:00 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+slurmstepd: error: *** STEP 6820639.0 ON c196-011 CANCELLED AT 2024-12-28T21:28:00 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination
+srun: error: c196-011: task 2: Terminated
+srun: error: c196-011: task 3: Terminated
+srun: error: c196-011: task 1: Terminated
