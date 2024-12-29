@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -J deep_faker_train   # Job name
-#SBATCH -o dft_tacc.out       # Standard output file
-#SBATCH -e dft_tacc.err       # Standard error file
+#SBATCH -o /work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/training_log/tacc_log/dft_tacc_$(date +%Y%m%d_%H%M%S).out # Standard output file with timestamp
+#SBATCH -e /work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/training_log/tacc_log/dft_tacc_$(date +%Y%m%d_%H%M%S).err # Standard error file with timestamp
 #SBATCH -N 1                  # Number of nodes
 #SBATCH --ntasks-per-node=4   # Number of tasks (GPUs) per node
 #SBATCH -p rtx-dev            # Partition (queue)
@@ -19,4 +19,3 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # Run the Python script
 srun python3 ../main.py
-

@@ -17,7 +17,7 @@ checkpoint_dir_CNN_DF = "/work2/10214/yu_yao/Research_Projects/Microstructure_En
 checkpoint_dir_AE_DF = "/work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/checkpoints_main/cp_AE_DF"
 batch_size = 32
 num_epochs = 20000
-checkpoint_interval = 200
+checkpoint_interval = 20
 ##################################################################################################################################################
 
 def set_seed(seed=42):
