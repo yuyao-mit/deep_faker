@@ -1,12 +1,20 @@
 #!/bin/bash
 #SBATCH -J deep_faker_train   # Job name
-#SBATCH -o /work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/training_log/tacc_log/dft_tacc_$(date +%Y%m%d_%H%M%S).out # Standard output file with timestamp
-#SBATCH -e /work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/training_log/tacc_log/dft_tacc_$(date +%Y%m%d_%H%M%S).err # Standard error file with timestamp
 #SBATCH -N 1                  # Number of nodes
 #SBATCH --ntasks-per-node=4   # Number of tasks (GPUs) per node
 #SBATCH -p rtx-dev            # Partition (queue)
 #SBATCH -t 2:00:00            # Time limit
 #SBATCH --exclusive
+
+# Generate timestamp for output and error file names
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+OUTPUT_DIR="/work2/10214/yu_yao/Research_Projects/Microstructure_Enough/deep_faker/src/training_log/tacc_log"
+OUT_FILE="${OUTPUT_DIR}/${TIMESTAMP}_train.out"
+ERR_FILE="${OUTPUT_DIR}/${TIMESTAMP}_train.err"
+
+# Redirect standard output and error
+exec > $OUT_FILE
+exec 2> $ERR_FILE
 
 # Load necessary modules
 module load python3/3.9.2    
