@@ -10,6 +10,10 @@ Massachusetts Institute of Technology
 
 Understanding the intricate relationships between synthesis recipes, structure, and properties in materials science remains a challenging and pressing issue. Central to this endeavor is the question of how materials behave across different length scales. How can insights from the atomistic scale translate to bulk properties, and vice versa? To address these questions, we focus on two fundamental problems: the **Counting Problem** and the **Enough Problem**.
 
+![Potential framework for information quantification in SEM images](figures/FIG_00000.png)
+
+*Figure 1: Potential framework for information quantification in SEM images.*
+
 ---
 
 ## Counting Problem
