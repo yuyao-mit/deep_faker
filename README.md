@@ -51,3 +51,27 @@ We propose a framework that uses few-shot learning with a generative model to ge
 The "counting" problem addresses the instruments and length scales necessary to connect structure and property. The "enough" problem quantifies the information content at each length scale. These problems are complementary, as the counting problem determines the significance of detail at various scales, while the enough problem quantifies how much detail is sufficient to represent the material. 
 
 Together, these approaches can test hypotheses about the optimal length scales for capturing relevant material properties, paving the way for a deeper understanding of multiscale materials science.
+
+---
+
+## Environment Setup
+
+To set up the environment for the project, follow these steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/yuyao-mit/deep_faker
+cd deep_faker
+
+# Create and activate a Python virtual environment
+python3 -m venv venv
+source venv/bin/activate  # For Linux/macOS
+# On Windows, use: venv\Scripts\activate
+
+# Install required dependencies
+pip install -r requirements.txt
+
+# Verify the environment setup
+python -m pip check
+
+```
